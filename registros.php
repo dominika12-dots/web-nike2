@@ -1,7 +1,7 @@
 <?php
 // Paso 1: Configura tus credenciales de Supabase
-$SUPABASE_URL = "https://<tu_supabase_url>";
-$SUPABASE_API_KEY = "<tu_supabase_anon_key>";
+$SUPABASE_URL = "https://grwajsadxvkmmzywdyrt.supabase.co";
+$SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdyd2Fqc2FkeHZrbW16eXdkeXJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxODE0MDYsImV4cCI6MjA0Nzc1NzQwNn0.KEhxqVAWiS-KyuW-tdTOOkgu8_1h05EcnSYpzIpLxno";
 
 // Paso 2: Obtener los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
