@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRODUCTO DUNK</title>
+  <style>
+    /* Reseteo de márgenes y rellenos para asegurar una correcta visualización */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%; /* Es importante que el body y html ocupen el 100% de la altura */
+    }
+    p {
+      font-family: Arial;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex; /* Usamos Flexbox en el body */
+      flex-direction: column; /* Los elementos se colocarán uno debajo del otro */
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav li {
+      margin-right: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      background-color: #f7f7f7;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex; /* Usamos Flexbox para alinear la imagen y el texto */
+      align-items: center; /* Alineamos los elementos verticalmente */
+      justify-content: space-between; /* Espacio entre la imagen y el texto */
+      flex: 1; /* Esto hace que la sección ocupe el espacio disponible */
+    }
+
+    .product-image {
+      flex: 1; /* La imagen ocupa el espacio disponible */
+      max-width: 70%; /* Ahora la imagen ocupará el 70% del espacio */
+      height: auto; /* Para mantener las proporciones correctas */
+    }
+
+    .product-description {
+      flex: 1; /* La descripción ocupa el espacio disponible */
+      max-width: 45%; /* Limita el tamaño del texto */
+      padding-left: 20px; /* Espacio entre la imagen y la descripción */
+    }
+
+    h1, h2, h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    footer ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer li {
+      margin-right: 20px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+      color: darkred;
+    }
+  </style>
+  <script>
+    function redirigir() {
+      window.location.href = "C:/Users/Berenice/Desktop/nuevo xampp/htdocs/COM.html";  // Redirige a la página local COM.html
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/index.html">Inicio</a></li>
+        <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/DIS.html" >Productos</a></li>
+        <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/index.html#sobre-nike">Sobre Nike</a></li>
+        <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/sobre-nosotros.html">Sobre Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <div class="product-image">
+      <img src="https://i.ebayimg.com/images/g/kjkAAOSwaF9lhUSQ/s-l640.png" alt="NIKE DUNK" width="70%" height="auto" style="object-fit: cover;">
+    </div>
+    <div class="product-description">
+      <h1>NIKE AIR UPTEMO</h1>
+      <p>TENIS NIKE AIR UPTEMO</p>
+      
+		<p>Las tallas son de:</p>
+		<p>23cm</p><p>24cm</p><p>26cm</p>
+      <h1><p>Precio $3,000 MX</p></h1><br><br>
+    
+      <!-- Botón para redirigir -->
+      <button onclick="redirigir()">Comprar</button>
+    </div>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#politicas">Políticas</a></li>
+      <li><a href="#terminos">Términos y Condiciones</a></li>
+    </ul>
+    <p>&copy; 2024 Nike. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
+
+
+

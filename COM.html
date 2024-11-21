@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago</title>
+    <!-- Incluir jsPDF desde un CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Esto asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer li {
+            margin: 0 10px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 80px; /* Para que el contenido no quede tapado por el header */
+            margin-bottom: 60px; /* Para que el contenido no quede tapado por el footer */
+        }
+
+        .container h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6D6D6D;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            color: #28a745;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/index.html">Inicio</a></li>
+                <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/DIS.html" >Productos</a></li>
+                <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/index.html#sobre-nike">Sobre Nike</a></li>
+                <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="C:/Users/Berenice/Desktop/nuevo xampp/htdocs/Sesión.html">Iniciar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+<center>
+    <div class="container">
+        <h2>Formulario de Pago</h2>
+
+        <!-- Formulario de ingreso de datos -->
+        <div id="form-container">
+            <label for="user_id">ID de Usuario:</label>
+            <input type="text" id="user_id" placeholder="Ingresa tu ID de usuario">
+            
+            <label for="amount">Monto:</label>
+            <input type="number" id="amount" placeholder="Ingresa el monto" step="0.01">
+            
+            <label for="date">Fecha:</label>
+            <input type="date" id="date">
+
+            <button onclick="confirmarPago()">Confirmar Pago</button>
+        </div>
+
+        <!-- Mensaje de éxito y botón de descarga -->
+        <div id="success-container" style="display: none;">
+            <p class="success-message">¡Pago realizado con éxito!</p>
+            <button onclick="descargarComprobante()">Descargar Comprobante</button>
+        </div>
+    </div>
+</center>
+    <script>
+        function confirmarPago() {
+            // Obtener los valores ingresados
+            const userId = document.getElementById('user_id').value;
+            const amount = document.getElementById('amount').value;
+            const date = document.getElementById('date').value;
+
+            // Validación simple de campos
+            if (!userId || !amount || !date) {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            // Ocultar el formulario y mostrar el mensaje de éxito y botón de descarga
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('success-container').style.display = 'block';
+        }
+
+        function descargarComprobante() {
+            const { jsPDF } = window.jspdf;
+            
+            // Obtener los datos de pago ingresados
+            const userId = document.getElementById('user_id').value;
+            const amount = document.getElementById('amount').value;
+            const date = document.getElementById('date').value;
+
+            // Crear un nuevo documento PDF
+            const doc = new jsPDF();
+
+            // Agregar contenido al PDF
+            doc.text("Comprobante de Pago", 20, 20);
+            doc.text(`Usuario ID: ${userId}`, 20, 30);
+            doc.text(`Monto: $${amount}`, 20, 40);
+            doc.text(`Fecha: ${date}`, 20, 50);
+            doc.text("Estado: Pagado", 20, 60);
+
+            // Descargar el PDF con el nombre personalizado
+            doc.save(`comprobante_${userId}.pdf`);
+        }
+    </script>
+
+    <footer>
+        <ul>
+            <li>Masias Fernandez</li>
+            <li>Soledad Gonzalez</li>
+            <li>Vital Raquel</li>
+            <li>Rodriguez Flores</li>
+        </ul>
+        <h4>&copy; 2024 Nike. Todos los derechos reservados.</h4>
+    </footer>
+</body>
+</html>
