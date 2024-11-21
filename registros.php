@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Paso 3: Crear un array con los datos a insertar
     $data = array(
-        "nombre" => $nombre,
-        "apellido" => $apellido,
-        "correo" => $correo,
-        "telefono" => $telefono
+        "nom" => $nombre,
+        "ape" => $apellido,
+        "cor" => $correo,
+        "tel" => $telefono
     );
 
     // Paso 4: Convertir el array en formato JSON
