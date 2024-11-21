@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nike</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+     body {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que el contenido ocupe al menos la altura de la ventana */
+        }
+
+        p {
+            color: black;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+        }
+
+        h2 {
+            color: black; /* Cambié el color a negro para que el título sea más visible sobre un fondo blanco */
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Esto asegura que el footer siempre quede al fondo */
+        }
+
+        footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer li {
+            margin-right: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function redirigirPagina(url) {
+            window.location.href = url;  // Redirige a la URL proporcionada
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="file:///C:/Users/Usuario/Downloads/index.html">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="file:///C:/Users/Usuario/Downloads/index.html#sobre-nike">Sobre Nike</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#iniciar-sesion">Iniciar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="w3-container">
+            <center><h2>PRODUCTOS</h2></center>
+        </div>
+
+        <div class="w3-row-padding w3-section">
+
+            <div class="w3-half">
+                <div class="w3-card" style="width: 380px; height: 400px; padding: 0;">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQHeT677VmnypC9Kj_Fwh53hgucooyjFEBv-dzUl-r0UaTIbCzeHwlAU1dEiZA_j6th0GViOYOK-5xH1Sy0tHcB-4IXP9w5_qtzfh_tIAo1KJWNr7L40WRJSpqk&usqp=CAE" alt="NIKE DUNK" width="100%" height="250" style="object-fit: cover;">
+                    <div class="w3-container" style="text-align: center;">
+                        <p>NIKE DUNK</p>
+                        <p>DESCRIPCION DEL PRODUCTO</p>
+                        <input type="submit" value="comprar" onclick="redirigirPagina('file:///C:/Users/Usuario/Downloads/PRODUCTO%20DUNK.html');">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-half">
+                <div class="w3-card" style="width: 350px; height: 400px; padding: 0;">
+                    <img src="https://i.ebayimg.com/images/g/kjkAAOSwaF9lhUSQ/s-l640.png" alt="NIKE AIR MORE UPTEMPO" width="100%" height="270" style="object-fit: cover;">
+                    <div class="w3-container" style="text-align: center;">
+                        <p>NIKE AIR MORE UPTEMPO</p>
+                        <p>DESCRIPCION DEL PRODUCTO</p>
+                        <input type="submit" value="comprar" onclick="redirigirPagina('file:///C:/Users/Usuario/Downloads/PRODUCTO%20OTRO.html');">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li>Masias Fernandez</li>
+            <li>Soledad Gonzalez</li>
+            <li>Vital Raquel</li>
+            <li>Rodriguez Flores</li>
+        </ul>
+        <h6>&copy; 2024 Nike. Todos los derechos reservados.</h6>
+    </footer>
+
+</body>
+</html>
+
+
